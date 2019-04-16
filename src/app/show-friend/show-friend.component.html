@@ -14,16 +14,22 @@
         <th>Phone</th>
         <th>Country</th>
         <th>City</th>
+        <th>Remove</th>
       </tr>
       </thead>
       <tbody *ngFor="let friend of friends">
-      <tr (click)="removeFriend(friend)">
+      <tr>
         <td>{{friend.fName}}</td>
         <td>{{friend.lName}}</td>
         <td>{{friend.email}}</td>
         <td>{{friend.phone}}</td>
         <td>{{friend.country}}</td>
         <td>{{friend.city}}</td>
+        <td>
+          <img src="../../assets/cancel-512.png"
+               style="width:25px;
+               height:auto;" (click)="removeFriend(friend)">
+        </td>
       </tr>
       </tbody>
     </table>
