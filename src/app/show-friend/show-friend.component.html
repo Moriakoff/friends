@@ -1,0 +1,31 @@
+<div class="card">
+
+  <div class="card-header bg-light">
+    <h1>My friends</h1>
+  </div>
+
+  <div>
+    <table class="table table-hover table-striped">
+      <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Country</th>
+        <th>City</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let friend of friends">
+      <tr (click)="removeFriend(friend)">
+        <td>{{friend.fName}}</td>
+        <td>{{friend.lName}}</td>
+        <td>{{friend.email}}</td>
+        <td>{{friend.phone}}</td>
+        <td>{{friend.country}}</td>
+        <td>{{friend.city}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

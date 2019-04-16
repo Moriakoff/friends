@@ -1,0 +1,26 @@
+<div class="card">
+
+  <div class="card-header bg-light">
+    <h1>Add locale</h1>
+  </div>
+
+  <div class="card-body">
+
+    <div>
+      <div class="form-group">
+        <label for="country">Country:</label>
+        <input type="text" id="country" class="form-control" [(ngModel)]="country">
+      </div>
+
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" id="city" class="form-control" [(ngModel)]="city">
+      </div>
+
+      <button class="btn btn-success float-right" (click)="sendLocale()">Save</button>
+      
+    </div>
+    
+
+  </div>
+</div>
