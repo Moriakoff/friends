@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import Friend from "../add-friend/Friend";
+import Friend from "../model/Friend";
 
 
 @Component({

@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Locale} from "./Locale";
+import {Locale} from "../model/Locale";
 
 @Component({
   selector: 'app-countries',

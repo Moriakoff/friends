@@ -7,6 +7,8 @@ export default class Friend {
   private _email: string;
   private _country: string;
   private _city:string;
+  private _isSaved: boolean;
+
 
 
   constructor(fName: string, lName: string, phone: string, email: string, country: string, city: string) {
@@ -16,6 +18,22 @@ export default class Friend {
     this._email = email;
     this._country = country;
     this._city = city;
+  }
+
+  get id(): number {
+    return this._id;
+  }
+
+  set id(value: number) {
+    this._id = value;
+  }
+
+  get isSaved(): boolean {
+    return this._isSaved;
+  }
+
+  set isSaved(value: boolean) {
+    this._isSaved = value;
   }
 
   get fName(): string {

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Locale} from "./countries/Locale";
-import Friend from "./add-friend/Friend";
+import {Locale} from "./model/Locale";
+import Friend from "./model/Friend";
 
 @Component({
   selector: 'app-root',

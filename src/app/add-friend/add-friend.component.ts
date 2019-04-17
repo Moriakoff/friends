@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import Friend from "./Friend";
+import Friend from "../model/Friend";
 
 @Component({
   selector: 'app-add-friend',
@@ -22,13 +22,16 @@ export class AddFriendComponent implements OnInit {
   saveFriend() {
     let friend = new Friend(this.friendToEdit.fName, this.friendToEdit.lName, this.friendToEdit.phone, this.friendToEdit.email,
       this.friendToEdit.country, this.friendToEdit.city);
+    friend.isSaved = true;
 
+    console.log(friend);
     this.addFriendEvent.emit(friend);
     this.clear();
   }
 
   private clear() {
     this.friendToEdit = new Friend("", "", "", "", "", "");
+    this.friendToEdit.isSaved = false;
   }
 
   loadedCountries(): string[] {
