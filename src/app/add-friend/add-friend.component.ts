@@ -12,34 +12,23 @@ export class AddFriendComponent implements OnInit {
   @Output() public addFriendEvent = new EventEmitter();
   @Input("editFriend") private friendToEdit: Friend;
 
-  fName: string;
-  lName: string;
-  phone: string;
-  email: string;
-  country: string;
-  city: string;
-
-
   constructor() {
   }
 
   ngOnInit() {
+
   }
 
   saveFriend() {
-    let friend = new Friend(this.fName, this.lName, this.phone, this.email, this.country, this.city);
+    let friend = new Friend(this.friendToEdit.fName, this.friendToEdit.lName, this.friendToEdit.phone, this.friendToEdit.email,
+      this.friendToEdit.country, this.friendToEdit.city);
 
-    this.clear();
     this.addFriendEvent.emit(friend);
+    this.clear();
   }
 
   private clear() {
-    this.fName = "";
-    this.lName = "";
-    this.phone = "";
-    this.email = "";
-    this.country = "";
-    this.city = "";
+    this.friendToEdit = new Friend("", "", "", "", "", "");
   }
 
   loadedCountries(): string[] {

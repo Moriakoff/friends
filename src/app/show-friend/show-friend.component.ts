@@ -23,6 +23,7 @@ export class ShowFriendComponent implements OnInit {
   }
 
   sendFriendToEdit(friend: Friend) {
+    console.log(friend);
     this.editFriendEvent.emit(friend);
   }
 }

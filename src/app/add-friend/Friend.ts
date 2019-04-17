@@ -1,5 +1,6 @@
 export default class Friend {
 
+  private _id: number;
   private _fName: string;
   private _lName: string;
   private _phone: string;

@@ -10,7 +10,7 @@
         <input class="form-control"
                type="text"
                id="fName"
-               [(ngModel)]="fName">
+               [(ngModel)]="friendToEdit.fName">
       </div>
 
       <div class="form-group">
@@ -18,7 +18,7 @@
         <input class="form-control"
                type="text"
                id="lName"
-               [(ngModel)]="lName">
+               [(ngModel)]="friendToEdit.lName">
       </div>
 
       <div class="form-group">
@@ -26,7 +26,7 @@
         <input class="form-control"
                type="text"
                id="phone"
-               [(ngModel)]="phone">
+               [(ngModel)]="friendToEdit.phone">
       </div>
 
       <div class="form-group">
@@ -34,12 +34,12 @@
         <input class="form-control"
                type="email"
                id="email"
-               [(ngModel)]="email">
+               [(ngModel)]="friendToEdit.email">
       </div>
 
       <div class="form-group">
         <label for="country"></label>
-        <select id="country" class="form-control" [(ngModel)]="country">
+        <select id="country" class="form-control" [(ngModel)]="friendToEdit.country">
           <option selected disabled></option>
           <option *ngFor="let country of loadedCountries()">{{country}}</option>
         </select>
@@ -47,9 +47,9 @@
 
       <div class="form-group">
         <label for="city"></label>
-        <select name="" id="city" class="form-control" [(ngModel)]="city">
+        <select name="" id="city" class="form-control" [(ngModel)]="friendToEdit.city">
           <option selected disabled></option>
-          <option *ngFor="let city of loadedCities(country)">{{city}}</option>
+          <option *ngFor="let city of loadedCities(friendToEdit.country)">{{city}}</option>
         </select>
       </div>
 
