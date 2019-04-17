@@ -18,7 +18,7 @@
       </tr>
       </thead>
       <tbody *ngFor="let friend of friends">
-      <tr>
+      <tr (dblclick)="sendFriendToEdit(friend)">
         <td>{{friend.fName}}</td>
         <td>{{friend.lName}}</td>
         <td>{{friend.email}}</td>

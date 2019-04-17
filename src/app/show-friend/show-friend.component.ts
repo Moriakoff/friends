@@ -11,6 +11,7 @@ export class ShowFriendComponent implements OnInit {
 
   @Input("myFriends") private friends: Friend[];
   @Output() public showFriendEvent = new EventEmitter();
+  @Output() public editFriendEvent = new EventEmitter();
 
   constructor() { }
 
@@ -19,5 +20,9 @@ export class ShowFriendComponent implements OnInit {
 
   removeFriend(friend: Friend) {
     this.showFriendEvent.emit(this.friends.filter(value => value !== friend));
+  }
+
+  sendFriendToEdit(friend: Friend) {
+    this.editFriendEvent.emit(friend);
   }
 }

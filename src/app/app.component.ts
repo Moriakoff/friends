@@ -11,6 +11,7 @@ export class AppComponent implements OnInit{
   title = 'friends';
   locales: Map<string,string[]> = new Map<string, string[]>();
   friends: Friend[] = [];
+  friendToEdit: Friend;
 
   ngOnInit(): void {
     this.locales.set("Israel", ["Tel-aviv","Haifa","Modiin"]);

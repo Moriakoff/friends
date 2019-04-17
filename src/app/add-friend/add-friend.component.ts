@@ -10,6 +10,7 @@ export class AddFriendComponent implements OnInit {
 
   @Input("savedLocale") private locales: Map<string, string[]>;
   @Output() public addFriendEvent = new EventEmitter();
+  @Input("editFriend") private friendToEdit: Friend;
 
   fName: string;
   lName: string;
