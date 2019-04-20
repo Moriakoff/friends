@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Locale} from "./model/Locale";
 import Friend from "./model/Friend";
+import * as _ from "lodash";
 
 @Component({
   selector: 'app-root',
@@ -31,17 +32,23 @@ export class AppComponent implements OnInit {
   }
 
   addFriend($event: Friend) {
-    if (!this.friendExists($event.fName,$event.lName)) {
+    if (!this.friendExists($event.fName, $event.lName)) {
       this.friends.push($event);
     } else {
-      let index = this.friends.indexOf($event);
+      let index = this.getFriendIndex($event);
       this.friends[index] = $event;
     }
   }
 
-  private friendExists(fName:string,lName:string) {
-    return this.friends.some(function(friend) {
-      return friend.fName === fName && friend.lName==lName;
+  private friendExists(fName: string, lName: string) {
+    return this.friends.some(function (friend) {
+      return friend.fName === fName && friend.lName == lName;
+    });
+  }
+
+  private getFriendIndex(friend: Friend): number {
+    return _.findIndex(this.friends, function (f) {
+      return f.fName === friend.fName && f.lName === friend.lName;
     });
   }
 }

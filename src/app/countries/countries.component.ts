@@ -17,9 +17,20 @@ export class CountriesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.country = "";
+    this.city = "";
+
   }
 
   sendLocale() {
+
+    if(this.city =="" || this.country ==""){
+      alert("Please fill all inputs fields");
+      return;
+    }
+
     this.countryEvent.emit(new Locale(this.country, this.city));
+    this.country = "";
+    this.city = "";
   }
 }

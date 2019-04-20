@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import Friend from "../model/Friend";
+import * as _ from 'lodash';
+
 
 
 @Component({
@@ -24,6 +26,8 @@ export class ShowFriendComponent implements OnInit {
 
   sendFriendToEdit(friend: Friend) {
     console.log(friend);
-    this.editFriendEvent.emit(friend);
+    let clone = _.cloneDeep<Friend>(friend);
+    console.log(friend === clone);
+    this.editFriendEvent.emit(clone);
   }
 }
